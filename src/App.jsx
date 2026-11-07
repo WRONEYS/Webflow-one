@@ -293,9 +293,17 @@ function Hero() {
             Request admission
           </a>
         </div>
-        <p className="hero-within" aria-hidden="true">
-          Within
-        </p>
+        <div className="handoff" aria-hidden="true">
+          <p className="handoff-title">
+            <span>Enter</span>
+            <span>Places</span>
+          </p>
+          <p className="handoff-sub">
+            <span>Not</span>
+            <span>everything</span>
+            <span>is posted</span>
+          </p>
+        </div>
       </div>
       <svg className="svg-defs" width="0" height="0" aria-hidden="true">
         <defs>
@@ -347,13 +355,27 @@ function Places() {
   const place = places[index];
 
   return (
-    <section className="places" id="places" ref={ref}>
+    <section className="places" id="places">
+      <div className="places-intro">
+        <div className="intro-lockup">
+          <h2 className="intro-title">
+            <span>Enter</span>
+            <span>Places</span>
+          </h2>
+          <p className="intro-sub">
+            <span>Not</span>
+            <span>everything</span>
+            <span>is posted</span>
+          </p>
+        </div>
+      </div>
+      <div className="places-pin" ref={ref}>
       <div className="places-sticky">
-        <h2 className="places-title">
+        <p className="places-title">
           <span>Not</span>
           <span>everything</span>
           <span>is posted</span>
-        </h2>
+        </p>
         <div className="mosaic">
           {satellites.map((item) => (
             <figure key={item.pos} className={`sat sat-${item.pos}`} style={{ "--dx": item.dx, "--dy": item.dy }}>
@@ -386,6 +408,7 @@ function Places() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );
